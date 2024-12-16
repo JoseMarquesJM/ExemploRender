@@ -12,7 +12,7 @@ WORKDIR /src
 COPY ["src/Api.Render2/Api.Render2/Api.Render2.csproj", "Api.Render2/"]
 RUN dotnet restore "./Api.Render2/Api.Render2/Api.Render2.csproj"
 COPY . .
-# WORKDIR "/src/Api.Render2"
+WORKDIR "/src/Api.Render2/Api.Render2"
 RUN dotnet build "src/Api.Render2/Api.Render2/Api.Render2.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
