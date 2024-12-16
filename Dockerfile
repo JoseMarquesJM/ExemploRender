@@ -12,7 +12,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/Api.Render2/Api.Render2.csproj", "Api.Render2/"]
+COPY ["src/Api.Render2.csproj", "Api.Render2/"]
 RUN dotnet restore "./Api.Render2/Api.Render2.csproj"
 COPY . .
 WORKDIR "/src/Api.Render2"
